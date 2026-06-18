@@ -83,11 +83,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "VetReminder — Gestão para Clínicas Veterinárias" },
       { name: "description", content: "VetReminder ajuda clínicas veterinárias a acompanhar pacientes e enviar lembretes automáticos via WhatsApp." },
-      { property: "og:title", content: "VetReminder" },
-      { property: "og:description", content: "Sistema SaaS para clínicas veterinárias com lembretes automáticos via WhatsApp." },
+      { property: "og:title", content: "VetReminder — Gestão para Clínicas Veterinárias" },
+      { property: "og:description", content: "VetReminder ajuda clínicas veterinárias a acompanhar pacientes e enviar lembretes automáticos via WhatsApp." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "VetReminder — Gestão para Clínicas Veterinárias" },
+      { name: "twitter:description", content: "VetReminder ajuda clínicas veterinárias a acompanhar pacientes e enviar lembretes automáticos via WhatsApp." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2034e80f-8189-4e8d-8ce3-cc2bf2c81173/id-preview-e3b26430--1842b765-1d60-4756-858a-03fa7181c47f.lovable.app-1781810378911.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2034e80f-8189-4e8d-8ce3-cc2bf2c81173/id-preview-e3b26430--1842b765-1d60-4756-858a-03fa7181c47f.lovable.app-1781810378911.png" },
     ],
     links: [
       {
