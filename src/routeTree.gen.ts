@@ -13,6 +13,7 @@ import { Route as VacinacaoRouteImport } from './routes/vacinacao'
 import { Route as ProdutosRouteImport } from './routes/produtos'
 import { Route as PetsRouteImport } from './routes/pets'
 import { Route as MensagensRouteImport } from './routes/mensagens'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as InternacaoRouteImport } from './routes/internacao'
 import { Route as FinanceiroRouteImport } from './routes/financeiro'
 import { Route as DashboardRouteImport } from './routes/dashboard'
@@ -42,6 +43,11 @@ const PetsRoute = PetsRouteImport.update({
 const MensagensRoute = MensagensRouteImport.update({
   id: '/mensagens',
   path: '/mensagens',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InternacaoRoute = InternacaoRouteImport.update({
@@ -106,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof DashboardRoute
   '/financeiro': typeof FinanceiroRoute
   '/internacao': typeof InternacaoRoute
+  '/login': typeof LoginRoute
   '/mensagens': typeof MensagensRoute
   '/pets': typeof PetsRoute
   '/produtos': typeof ProdutosRoute
@@ -122,6 +129,7 @@ export interface FileRoutesByTo {
   '/dashboard': typeof DashboardRoute
   '/financeiro': typeof FinanceiroRoute
   '/internacao': typeof InternacaoRoute
+  '/login': typeof LoginRoute
   '/mensagens': typeof MensagensRoute
   '/pets': typeof PetsRoute
   '/produtos': typeof ProdutosRoute
@@ -139,6 +147,7 @@ export interface FileRoutesById {
   '/dashboard': typeof DashboardRoute
   '/financeiro': typeof FinanceiroRoute
   '/internacao': typeof InternacaoRoute
+  '/login': typeof LoginRoute
   '/mensagens': typeof MensagensRoute
   '/pets': typeof PetsRoute
   '/produtos': typeof ProdutosRoute
@@ -157,6 +166,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/financeiro'
     | '/internacao'
+    | '/login'
     | '/mensagens'
     | '/pets'
     | '/produtos'
@@ -173,6 +183,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/financeiro'
     | '/internacao'
+    | '/login'
     | '/mensagens'
     | '/pets'
     | '/produtos'
@@ -189,6 +200,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/financeiro'
     | '/internacao'
+    | '/login'
     | '/mensagens'
     | '/pets'
     | '/produtos'
@@ -206,6 +218,7 @@ export interface RootRouteChildren {
   DashboardRoute: typeof DashboardRoute
   FinanceiroRoute: typeof FinanceiroRoute
   InternacaoRoute: typeof InternacaoRoute
+  LoginRoute: typeof LoginRoute
   MensagensRoute: typeof MensagensRoute
   PetsRoute: typeof PetsRoute
   ProdutosRoute: typeof ProdutosRoute
@@ -240,6 +253,13 @@ declare module '@tanstack/react-router' {
       path: '/mensagens'
       fullPath: '/mensagens'
       preLoaderRoute: typeof MensagensRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/internacao': {
@@ -326,6 +346,7 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardRoute: DashboardRoute,
   FinanceiroRoute: FinanceiroRoute,
   InternacaoRoute: InternacaoRoute,
+  LoginRoute: LoginRoute,
   MensagensRoute: MensagensRoute,
   PetsRoute: PetsRoute,
   ProdutosRoute: ProdutosRoute,
