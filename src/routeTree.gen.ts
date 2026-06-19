@@ -22,6 +22,7 @@ import { Route as ClientesRouteImport } from './routes/clientes'
 import { Route as AniversariosRouteImport } from './routes/aniversarios'
 import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as AdminRouteImport } from './routes/admin'
+import { Route as IndexRouteImport } from './routes/index'
 
 const VacinacaoRoute = VacinacaoRouteImport.update({
   id: '/vacinacao',
@@ -88,8 +89,14 @@ const AdminRoute = AdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
+  '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/agenda': typeof AgendaRoute
   '/aniversarios': typeof AniversariosRoute
@@ -105,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/vacinacao': typeof VacinacaoRoute
 }
 export interface FileRoutesByTo {
+  '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/agenda': typeof AgendaRoute
   '/aniversarios': typeof AniversariosRoute
@@ -121,6 +129,7 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/agenda': typeof AgendaRoute
   '/aniversarios': typeof AniversariosRoute
@@ -138,6 +147,7 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/'
     | '/admin'
     | '/agenda'
     | '/aniversarios'
@@ -153,6 +163,7 @@ export interface FileRouteTypes {
     | '/vacinacao'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/'
     | '/admin'
     | '/agenda'
     | '/aniversarios'
@@ -168,6 +179,7 @@ export interface FileRouteTypes {
     | '/vacinacao'
   id:
     | '__root__'
+    | '/'
     | '/admin'
     | '/agenda'
     | '/aniversarios'
@@ -184,6 +196,7 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
   AgendaRoute: typeof AgendaRoute
   AniversariosRoute: typeof AniversariosRoute
@@ -292,10 +305,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   AgendaRoute: AgendaRoute,
   AniversariosRoute: AniversariosRoute,
