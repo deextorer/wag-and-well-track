@@ -11,7 +11,7 @@ import { useTenant } from "@/lib/tenant";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const items = [
-  { to: "/", label: "Dashboard", icon: LayoutDashboard },
+  { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { to: "/clientes", label: "Clientes", icon: Users },
   { to: "/pets", label: "Pets", icon: PawPrint },
   { to: "/agenda", label: "Agenda", icon: Calendar },
@@ -56,7 +56,7 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => {
-                const active = item.to === "/" ? pathname === "/" : pathname.startsWith(item.to);
+                const active = pathname === item.to || pathname.startsWith(item.to + "/");
                 return (
                   <SidebarMenuItem key={item.to}>
                     <SidebarMenuButton asChild isActive={active}>
