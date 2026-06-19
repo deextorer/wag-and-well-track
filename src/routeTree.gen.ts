@@ -15,13 +15,13 @@ import { Route as PetsRouteImport } from './routes/pets'
 import { Route as MensagensRouteImport } from './routes/mensagens'
 import { Route as InternacaoRouteImport } from './routes/internacao'
 import { Route as FinanceiroRouteImport } from './routes/financeiro'
+import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ConsultasRouteImport } from './routes/consultas'
 import { Route as ConfiguracoesRouteImport } from './routes/configuracoes'
 import { Route as ClientesRouteImport } from './routes/clientes'
 import { Route as AniversariosRouteImport } from './routes/aniversarios'
 import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as AdminRouteImport } from './routes/admin'
-import { Route as IndexRouteImport } from './routes/index'
 
 const VacinacaoRoute = VacinacaoRouteImport.update({
   id: '/vacinacao',
@@ -51,6 +51,11 @@ const InternacaoRoute = InternacaoRouteImport.update({
 const FinanceiroRoute = FinanceiroRouteImport.update({
   id: '/financeiro',
   path: '/financeiro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConsultasRoute = ConsultasRouteImport.update({
@@ -83,20 +88,15 @@ const AdminRoute = AdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/agenda': typeof AgendaRoute
   '/aniversarios': typeof AniversariosRoute
   '/clientes': typeof ClientesRoute
   '/configuracoes': typeof ConfiguracoesRoute
   '/consultas': typeof ConsultasRoute
+  '/dashboard': typeof DashboardRoute
   '/financeiro': typeof FinanceiroRoute
   '/internacao': typeof InternacaoRoute
   '/mensagens': typeof MensagensRoute
@@ -105,13 +105,13 @@ export interface FileRoutesByFullPath {
   '/vacinacao': typeof VacinacaoRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/agenda': typeof AgendaRoute
   '/aniversarios': typeof AniversariosRoute
   '/clientes': typeof ClientesRoute
   '/configuracoes': typeof ConfiguracoesRoute
   '/consultas': typeof ConsultasRoute
+  '/dashboard': typeof DashboardRoute
   '/financeiro': typeof FinanceiroRoute
   '/internacao': typeof InternacaoRoute
   '/mensagens': typeof MensagensRoute
@@ -121,13 +121,13 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/agenda': typeof AgendaRoute
   '/aniversarios': typeof AniversariosRoute
   '/clientes': typeof ClientesRoute
   '/configuracoes': typeof ConfiguracoesRoute
   '/consultas': typeof ConsultasRoute
+  '/dashboard': typeof DashboardRoute
   '/financeiro': typeof FinanceiroRoute
   '/internacao': typeof InternacaoRoute
   '/mensagens': typeof MensagensRoute
@@ -138,13 +138,13 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
     | '/admin'
     | '/agenda'
     | '/aniversarios'
     | '/clientes'
     | '/configuracoes'
     | '/consultas'
+    | '/dashboard'
     | '/financeiro'
     | '/internacao'
     | '/mensagens'
@@ -153,13 +153,13 @@ export interface FileRouteTypes {
     | '/vacinacao'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | '/'
     | '/admin'
     | '/agenda'
     | '/aniversarios'
     | '/clientes'
     | '/configuracoes'
     | '/consultas'
+    | '/dashboard'
     | '/financeiro'
     | '/internacao'
     | '/mensagens'
@@ -168,13 +168,13 @@ export interface FileRouteTypes {
     | '/vacinacao'
   id:
     | '__root__'
-    | '/'
     | '/admin'
     | '/agenda'
     | '/aniversarios'
     | '/clientes'
     | '/configuracoes'
     | '/consultas'
+    | '/dashboard'
     | '/financeiro'
     | '/internacao'
     | '/mensagens'
@@ -184,13 +184,13 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
   AgendaRoute: typeof AgendaRoute
   AniversariosRoute: typeof AniversariosRoute
   ClientesRoute: typeof ClientesRoute
   ConfiguracoesRoute: typeof ConfiguracoesRoute
   ConsultasRoute: typeof ConsultasRoute
+  DashboardRoute: typeof DashboardRoute
   FinanceiroRoute: typeof FinanceiroRoute
   InternacaoRoute: typeof InternacaoRoute
   MensagensRoute: typeof MensagensRoute
@@ -243,6 +243,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FinanceiroRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/consultas': {
       id: '/consultas'
       path: '/consultas'
@@ -285,24 +292,17 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   AgendaRoute: AgendaRoute,
   AniversariosRoute: AniversariosRoute,
   ClientesRoute: ClientesRoute,
   ConfiguracoesRoute: ConfiguracoesRoute,
   ConsultasRoute: ConsultasRoute,
+  DashboardRoute: DashboardRoute,
   FinanceiroRoute: FinanceiroRoute,
   InternacaoRoute: InternacaoRoute,
   MensagensRoute: MensagensRoute,
@@ -313,13 +313,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
