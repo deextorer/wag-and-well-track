@@ -1,0 +1,48 @@
+
+> dev
+> vite dev --host 127.0.0.1
+
+
+  [32m[1mVITE[22m v8.1.0[39m  [2mready in [0m[1m7610[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m8080[22m/[39m
+[2m11:43:27[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [optimizer] scanning dependencies...
+[2m11:43:28[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [optimizer] bundling dependencies...
+[2m11:44:43[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m connected.
+[2m11:50:49[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/components/PageHeader.tsx[22m
+[2m11:50:51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/lib/tenant.tsx, /src/modules/dashboard/pages/DashboardPage.tsx, /src/routes/clientes.tsx?tsr-split=component, /src/routes/admin.tsx?tsr-split=component, /src/routes/mensagens.tsx?tsr-split=component, /src/routes/produtos.tsx?tsr-split=component, /src/routes/internacao.tsx?tsr-split=component, /src/routes/consultas.tsx?tsr-split=component, /src/routes/aniversarios.tsx?tsr-split=component, /src/routes/vacinacao.tsx?tsr-split=component and 2 more[22m
+[2m11:50:51[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/mock-data.ts[22m
+[2m11:50:51[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m11:50:51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/lib/tenant.tsx[22m
+[2m11:50:51[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/tenant.tsx[22m
+[2m11:50:51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/admin.tsx, /src/routes/admin.tsx?tsr-split=component[22m
+[2m11:50:51[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/admin.tsx[22m
+[2m11:50:51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/agenda.tsx, /src/routes/agenda.tsx?tsr-split=component[22m
+[2m11:50:51[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/agenda.tsx[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/aniversarios.tsx, /src/routes/aniversarios.tsx?tsr-split=component[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/aniversarios.tsx[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/clientes.tsx, /src/routes/clientes.tsx?tsr-split=component[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/clientes.tsx[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/configuracoes.tsx, /src/routes/configuracoes.tsx?tsr-split=component[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/configuracoes.tsx[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/financeiro.tsx, /src/routes/financeiro.tsx?tsr-split=component[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/financeiro.tsx[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/consultas.tsx, /src/routes/consultas.tsx?tsr-split=component[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/consultas.tsx[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/internacao.tsx, /src/routes/internacao.tsx?tsr-split=component[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/internacao.tsx[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/pets.tsx, /src/routes/pets.tsx?tsr-split=component[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/pets.tsx[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/produtos.tsx, /src/routes/produtos.tsx?tsr-split=component[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/produtos.tsx[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/mensagens.tsx, /src/routes/mensagens.tsx?tsr-split=component[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/mensagens.tsx[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/vacinacao.tsx, /src/routes/vacinacao.tsx?tsr-split=component[22m
+[2m11:50:52[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/vacinacao.tsx[22m
+[2m11:50:53[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/lib/tenant.tsx[22m Could not Fast Refresh ("useTenant" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m11:50:53[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/routes/__root.tsx, /src/components/AppSidebar.tsx, /src/modules/dashboard/pages/DashboardPage.tsx, /src/routes/clientes.tsx?tsr-split=component, /src/routes/configuracoes.tsx?tsr-split=component, /src/routes/mensagens.tsx?tsr-split=component, /src/routes/produtos.tsx?tsr-split=component, /src/routes/internacao.tsx?tsr-split=component, /src/routes/consultas.tsx?tsr-split=component, /src/routes/aniversarios.tsx?tsr-split=component, /src/routes/vacinacao.tsx?tsr-split=component and 2 more[22m
+[2m11:53:49[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/admin.tsx, /src/routes/admin.tsx?tsr-split=component[22m
+[2m11:53:49[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/admin.tsx[22m
+[2m11:53:49[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m program reload
+[2m11:53:53[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles.css?direct, /src/routes/admin.tsx, /src/routes/admin.tsx?tsr-split=component[22m
+[2m11:53:53[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/admin.tsx[22m
